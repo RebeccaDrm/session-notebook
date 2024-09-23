@@ -135,3 +135,35 @@ main.classList.remove("page--primary");
 ```js
 main.classList.toggle("page--primary");
 ```
+
+___
+
+## Variable Declarations
+
+Variablen sind eine Referenz oder ein Alias ​​für im Speicher abgelegte Daten. Mit Hilfe dieser Variablen kann auf diese Daten zugegriffen werden. 
+Es gibt 3 verschiedene Schlüsselwörter verwenden, um eine Variable zu deklarieren:
+
+const – deklariert eine Konstante, der Wert kann nicht geändert werden. Standardmethode zum Deklarieren von Variablen.
+
+let – deklariert eine Variable, der Wert kann geändert werden. Wird nur verwendet, wenn die Neuzuweisung eines neuen Werts erforderlich ist.
+
+var – veraltet, wird nicht mehr verwendet.
+
+Normally the keyword `const` is used to declare a variable.
+
+```js
+const aNewVariable = 1234;
+```
+
+The keyword `let` is only used when you need to reassign a value, for example when you want to
+increase a counter.
+
+```js
+let counter = 0;
+counter = counter + 1; // reassigning the value of counter
+```
+
+The `=` sign in programming doesn't quite work like the mathematical equality that you (maybe)
+remember from school. It means: "the value of the item on the right of the equal sign is saved in
+the item on the left of it". What the item on the right actually represents is calculated first and
+saved afterwards.
