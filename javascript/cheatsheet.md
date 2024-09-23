@@ -308,3 +308,65 @@ It can also distinguish which value should be passed as an argument to a functio
 ```js
 moveElement(xPos > 300 ? 300 : xPos); // the element can't be moved further than 300.
 ```
+
+---
+
+## Function Declarations
+
+You can define a function using a `function declaration`, which consists of:
+
+- The keyword `function`, which goes first.
+- A function `name`, which should describe its purpose.
+- A single `parameter` or a list of `parameters` between the parentheses `()`.
+- A function `body`, which contains the JavaScript code, between the curly braces `{}`.
+
+> 💡 Defining a function doesn't execute its code; you must call the function to run the code.
+
+```js
+function functionName() {
+  // Function body
+}
+
+function bakeCake() {
+  console.log("Mix the ingredients.");
+  console.log("Pour the batter into a pan.");
+  console.log("Bake at 180°C for 30 minutes.");
+}
+```
+____
+
+## Function Parameters
+
+- A function that always shows the same message isn't very useful.
+- Adding parameters makes a function more flexible by allowing different inputs.
+- Functions use `parameters` like predefined variables inside the function body.
+- You can name parameters freely, except for [reserved words](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#reserved_words).
+- When defining a function, these variables are called `parameters`
+- When calling a function, the values passed are called `arguments`.
+- When the function is called, the given values become `local variables` that the function uses.
+
+To clarify these terms:
+
+> 💡 A `parameter` is the variable listed inside the parentheses in the function declaration (declaration-time term).
+
+> 💡 An `argument` is the value that is passed to the function when it is called (call-time term).
+
+```js
+//           parameter ↓
+function printLetter(name) {
+  console.log("Hi " + name + ", hope you are fine. Your Mum");
+}
+
+//    argument ↓
+printLetter("Alice");
+
+//             parameters ↓
+function printSum(first, second, third) {
+  const sum = first + second + third;
+  console.log("The sum of your numbers is: " + sum);
+}
+//   arguments ↓
+printSum(3, 6, 9);
+```
+
+---
