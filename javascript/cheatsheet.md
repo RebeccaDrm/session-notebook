@@ -167,3 +167,144 @@ The `=` sign in programming doesn't quite work like the mathematical equality th
 remember from school. It means: "the value of the item on the right of the equal sign is saved in
 the item on the left of it". What the item on the right actually represents is calculated first and
 saved afterwards.
+
+
+## Primitive Data Types
+
+JavaScript is a dynamically typed language, which means, that you don't have to specify what kind of
+value you want to store, JavaScript detects this automatically.
+
+There are 7 primitive data types:
+
+| type        | represents                                                                                                                  |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `string`    | a sequence of characters: "abcd"                                                                                            |
+| `number`    | a number: 1234                                                                                                              |
+| `boolean`   | a binary statement, can be `true` or `false`                                                                                |
+| `null`      | represents "nothing", is typically set by developers                                                                        |
+| `undefined` | represents the state of "not existing". Anything not specified or not found in JavaScript defaults to the value `undefined`
+
+___
+
+Truthy and Falsy Values
+Sometimes you want to have a condition depending on another type of value. JavaScript can transform any value into a boolean with type coercion. That means that some values act as if they were true and others as if they were false: Truthy values become true, falsy values become false.
+
+truthy values:
+
+non zero numbers: 1, 2, -3, etc.
+non empty strings: "hello"
+true
+falsy values:
+
+0 / -0
+null
+false
+undefined
+empty string: ""
+
+## Comparison Operators
+
+Comparison operators produce boolean values by comparing two expressions:
+
+| Operator  | Effect                                                                           |
+| --------- | -------------------------------------------------------------------------------- |
+| A `===` B | strict equal: is `true` if both values are equal (including their type).         |
+| A `!==` B | strict not equal: is `true` if both values are not equal (including their type). |
+| A `>` B   | strictly greater than: is `true` if A is greater than B.                         |
+| A `<` B   | strictly less than: is `true` if A is less than B.                               |
+| A `>=` B  | greater than or equal: is `true` if A is greater than or equal B.                |
+| A `<=` B  | less than or equal: is `true` if A is less than or equal B.    
+
+
+---
+
+## Logical Operators
+
+Logical operators combine up to two booleans into a new boolean.
+
+| Operator                      | Effect                                                 |
+| ----------------------------- | ------------------------------------------------------ |
+| `!`A                          | `not`: flips a `true` value to `false` and vice versa. |
+| A <code>&#124;&#124;</code> B | `or`: is `true` if either A `or` B is true.            |
+| A `&&` B                      | `and`: is `true` if both A `and` B is true.            |
+
+
+## Control Flow: `if / else`
+
+With an if statement we can control whether a part of our code is executed or not, based on a
+condition.
+
+```js
+const isSunShining = true;
+
+if (isSunShining) {
+  // code that is executed only if condition "isSunShining" is true
+}
+```
+
+The else block is executed only if the condition is `false`.
+
+```js
+const isSunShining = false;
+
+if (isSunShining) {
+  // code that is executed only if condition "isSunShining" is true
+} else {
+  // code that is executed only if condition "isSunShining" is false
+}
+```
+
+The condition expression between the `()` brackets can be composed of logical or comparison
+operators as well. You can distinguish between more cases by chaining `else if` statements:
+
+```js
+if (hour < 12) {
+  console.log("Good Morning.");
+} else if (hour < 18) {
+  console.log("Good afternoon.");
+} else if (hour === 24) {
+  console.log("Good night.");
+} else {
+  console.log("Good evening.");
+}
+```
+
+If the condition is not a boolean, it is converted into one by type coercion. This can be used to
+check whether a value is not 0 or an empty string:
+
+```js
+const name = "Alex";
+if (name) {
+  console.log("Hi " + name + "!"); // only executed if name is not an empty string
+}
+```
+
+---
+
+## Ternary Operator: `? :`
+
+With if / else statements whole blocks of code can be controlled. The ternary operator can be used
+if you want to decide between two _expressions_, e.g. which value should be stored in a variable:
+
+```js
+const greetingText = time < 12 ? "Good morning." : "Good afternoon.";
+```
+
+The ternary operator has the following structure:
+
+```js
+condition ? expressionIfTrue : expressionIfFalse;
+```
+
+If the condition is true, the first expression is evaluated, otherwise the second expression. The
+ternary operator can be used to decide which function should be called:
+
+```js
+isUserLoggedIn ? logoutUser() : loginUser();
+```
+
+It can also distinguish which value should be passed as an argument to a function:
+
+```js
+moveElement(xPos > 300 ? 300 : xPos); // the element can't be moved further than 300.
+```
